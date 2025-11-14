@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VGU Exam Marks Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VGU Exam Marks Calculator</h1>
+            <div class="student-info">
+                <div class="input-group">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label for="enrollmentNo">Enrollment No:</label>
+                    <input type="text" id="enrollmentNo" placeholder="Enter enrollment number">
+                </div>
+                <div class="input-group">
+                    <label for="dateTime">Date & Time:</label>
+                    <input type="text" id="dateTime" readonly>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="subjects-section">
+                <h2>Subjects & Marks</h2>
+                <button id="addSubject" class="btn-primary">+ Add Subject</button>
+                
+                <div id="subjectsContainer" class="subjects-container">
+                    <!-- Subjects will be added here dynamically -->
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="actions">
+                    <button id="calculate" class="btn-primary">Calculate Final Marks</button>
+                    <button id="generatePDF" class="btn-secondary">Generate & Download PDF</button>
+                </div>
+
+                <div id="results" class="results-table" style="display: none;">
+                    <h3>Final Results</h3>
+                    <table id="marksTable">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>1st Mid Term</th>
+                                <th>2nd Mid Term</th>
+                                <th>Assignment</th>
+                                <th>End Term</th>
+                                <th>Final Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody id="marksTableBody">
+                            <!-- Results will be populated here -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5"><strong>Total:</strong></td>
+                                <td id="totalMarks"><strong>0</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    
+                    <div class="summary">
+                        <div class="average">
+                            <strong>Average: </strong><span id="averageMarks">0</span>
+                        </div>
+                        <div class="performance">
+                            <strong>Percentage: </strong><span id="percentage">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>VGU Exam Marks Calculator</h3>
+                    <p>A professional tool for calculating and managing exam marks for VGU students. Streamline your academic record-keeping with this intuitive application.</p>
+                    <div class="contact">
+                        <span><i class="fas fa-envelope"></i> taslimkhan06162@gmail.com</span>
+                        <span><i class="fas fa-phone"></i> +919508489651</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section developer">
+                    <h3>Developer</h3>
+                    <div class="developer-info">
+                        <div class="dev-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="dev-details">
+                            <h4>Taslim Khan</h4>
+                            <p>Web Developer</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/taslim-khan-290455336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 VGU Exam Marks Calculator. All rights reserved. | Made with <i class="fas fa-heart"></i> by Taslim Khan</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
